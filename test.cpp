@@ -23,6 +23,7 @@ int main() {
 	Status = doc.LoadFile("test.xml");
 	if (Status != XMLError::XML_SUCCESS) {
 		ERROR("Unable to load XML file\n");
+		return -1;
 	}
 	
 	auto tables = trecs_xml_to_json(doc);
