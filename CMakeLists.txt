@@ -1,3 +1,10 @@
-project(xml2json)
+cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 
-add_executable(xml2json main.cpp tinyxml2.cpp)
+project(xml2json CXX)
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/test.xml
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+set (CMAKE_CXX_STANDARD 11)
+
+add_executable(xml2json test.cpp tinyxml2.cpp)
